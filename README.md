@@ -1,4 +1,4 @@
 # My-Portfolio
 
 check out my personal Portfolio  
-https://github.com/SATHIYAPRIYAN7/My-Portfolio/Portfolio.html
+https://sathiyapriyan7.github.io/My-Portfolio/Portfolio.html
