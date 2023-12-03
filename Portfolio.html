@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -991,9 +995,10 @@ img {
             <h1>Sathiyapriyn K</h1>
             <p>
                 I'm a web developer who loves to create beautiful and functional websites
-                for people who want to make a difference in the world.
+                for people who want to make a difference in the world.And creating user-friendly and innovative
+                websites. With a solid foundation in HTML CSS JavaScript & React.
             </p>
-            <p>I can make websites using HTML, CSS, JavaScript, and React.</p>
+           
 
             <div class="social-media">
                 <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -1049,19 +1054,9 @@ img {
                 and solving problems with code!
             </h3>
             <p>
-                This website is my personal blog where I write about web development
-                topics that interest me and inspire me.
+                Passionate Web Developer dedicated to crafting seamless digital experiences. With a keen eye for detail and a commitment to innovation, I bring websites to life that not only meet client objectives but exceed user expectations. Proficient in front-end and back-end technologies, I thrive on turning concepts into functional, visually appealing, and user-friendly websites. Let's collaborate to bring your digital vision to reality.
             </p>
-            <p>
-                Thank you for visiting my website and getting to know me better. I hope you
-                enjoyed reading my blog posts and
-                found
-                them useful and informative. If you want to read more of my posts, subscribe
-                to my newsletter where I send
-                weekly
-                updates on web development trends and tips. If you have any feedback or
-                suggestions, please let me know. I'd love to hear from you.
-            </p>
+            
             <a href="#" class="btn">Read More</a>
         </div>
     </section>
@@ -1193,12 +1188,12 @@ img {
                     </div>
                     <div class="testimonial-slide swiper-slide">
                         <img src="https://tse2.mm.bing.net/th?id=OIP.HUT4n3Z8CV-x1EBv-SxoKgAAAA&pid=Api&P=0&h=180" alt="">
-                        <h3>MangoDB</h3>
-                        <p></p>
+                        <h3></h3>
+                        <p>ExpressJS</p>
                     </div>
                     <div class="testimonial-slide swiper-slide">
                         <img src="https://tse4.mm.bing.net/th?id=OIP.Ae6KuLbSCjSEbFBy2o2uiAHaHa&pid=Api&P=0&h=180" alt="">
-                        <h3>ExpressJS</h3>
+                        <h3>MangoDB</h3>
                         <p></p>
                     </div>
                      <div class="testimonial-slide swiper-slide">
@@ -1235,17 +1230,17 @@ img {
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#">
+        <form onsubmit="sendmail(e)" action="">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" id="fullname" placeholder="Full Name">
+                <input type="email" id="email_id" placeholder="Email Address">
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
+                <input type="number" id="mobile_num" placeholder="Mobile Number">
                 <input type="text" placeholder="Email Subject">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea id="message" name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input onclick="sendmail()" class="btn">Send Message</button>
         </form>
     </section>
 
@@ -1269,6 +1264,23 @@ img {
 
     <!-- custom js -->
     <script>
+
+function sendmail() {
+        
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('hvQzxGMI1VBmzvptJ');
+        })();
+        var values22 = {
+            from_name: document.getElementById("fullname").value,
+            email_id: document.getElementById("email_id").value,
+            mobile_num: document.getElementById("mobile_num").value,
+            message: document.getElementById("message").value
+        };
+        emailjs.sendForm('service_zv9taan', 'template_nnkvchi', values22).then( function(res){
+            alert("Send successfully");
+        });
+    }
     
     /*========== menu icon navbar ==========*/
 let menuIcon = document.querySelector('#menu-icon');
